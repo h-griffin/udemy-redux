@@ -1,6 +1,7 @@
 # udemy - redux
 
 ## notes
+- [when to use redux](notes/redux.md)
 - [immutable update patterns](notes/immutable-update.md)
 
 ### useful links & resources 
@@ -49,6 +50,8 @@ create store when application starts - index.js
 - add results state arr
 
 **counter.js**
-button to dispatch action to get result
+- button to dispatch action to get result
 
 
+**actions.js**
+- store actions and export constants to prevent bugs with editor help
