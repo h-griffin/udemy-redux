@@ -4,13 +4,21 @@ import './index.css';
 import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
-import { createStore } from 'redux';
+
 import { Provider } from 'react-redux';
 
-import reducer from './store/reducer';
+import { createStore, combineReducers } from 'redux';
+//                          ^
+import counterReducer from './store/reducers/counter';
+import resultReducer from './store/reducers/result';
+
+const rootReducer = combineReducers({
+    ctr: counterReducer, // state.ctr.counter
+    res: resultReducer, // state.res.result
+})
 
 
-const store = createStore(reducer);  //takes reducer as imput
+const store = createStore(rootReducer);  //takes reducer as imput
 
 ReactDOM.render( <Provider store={store} ><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
