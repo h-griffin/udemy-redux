@@ -17,12 +17,17 @@ exec file node js /console
 - [redux basics](redux-basics.js)
     - reducer 
         - only thing that can touch state
+        - pure sync code only
     - store - takes reducer as input
     - subscription 
         - function executed whenever state is changed
     - dispatcher 
         - gives action type to reducer to manipulate state
         **dispatch** MUST have ```type: ``` property to give to reducer for the **type** of action
+
+    - action creators
+        - async code
+        - shouldnt transform state update too much, but it can
 
 
 create store when application starts - index.js

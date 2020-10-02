@@ -5,7 +5,7 @@ import CounterOutput from '../../components/CounterOutput/CounterOutput';
 
 import { connect } from 'react-redux';
 // import * as actionTypes from '../../store/actions';
-import * as actionCreators from '../../store/actions/actions';
+import * as actionCreators from '../../store/actions/index';
 
 class Counter extends Component {
     state = {
