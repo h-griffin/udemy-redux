@@ -11,6 +11,7 @@ import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 //                          ^
 import counterReducer from './store/reducers/counter';
 import resultReducer from './store/reducers/result';
+import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
     ctr: counterReducer, // state.ctr.counter
@@ -33,7 +34,7 @@ const logger = store => {
 // chrome dev tools
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger)));  //takes reducer as imput
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(logger, thunk)));  //takes reducer as imput
 
 ReactDOM.render( <Provider store={store} ><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

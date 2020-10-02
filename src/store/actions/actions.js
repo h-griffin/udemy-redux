@@ -9,6 +9,7 @@ export const SUBTRACT = 'SUBTRACT';
 export const STORE_RESULT = 'STORE_RESULT';
 export const DELETE_RESULT = 'DELETE_RESULT';
 
+// add async code (http) thunk will return function instead of the action, inside this function actions can be dispatched
 
 //action creators
 
@@ -38,10 +39,23 @@ export const subtract  = (value) => {
     }
 }
 
-export const storeResult  = (res) => {   
+//syncronus action creator (return action) //only sync can touch store
+export const saveResult = (res) => { 
     return {
         type: STORE_RESULT,
         result: res,
+    }
+}
+
+//asynchronus action creator (return function) // only works with thunk -
+export const storeResult  = (res) => {   
+    return dispatch => { // return function (dispatch) {
+        setTimeout(() => {
+            // fake http
+            // dispatch(storeResult); //infinite loop
+            dispatch(saveResult(res));
+        }, 2000);
+
     }
 }
 

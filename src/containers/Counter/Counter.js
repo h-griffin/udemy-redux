@@ -67,10 +67,10 @@ const mapDispatchToProps = dispatch => {
     // what action
 
     return{
-        onIncrementCounter: () => dispatch(actionCreators.increment() ),
+        onIncrementCounter: () => dispatch(actionCreators.increment()),
         onDecrementCounter: () => dispatch(actionCreators.decrement()),
-        onAddCounter: () => dispatch(actionCreators.add(10)),
-        onSubtractCounter: () => dispatch(actionCreators.subtract(15)),
+        onAddCounter: () => dispatch(actionCreators.add(5)),
+        onSubtractCounter: () => dispatch(actionCreators.subtract(5)),
 
         onStoreResult: (result) => dispatch(actionCreators.storeResult(result)),
         onDeleteResult: (id) => dispatch(actionCreators.deleteResult(id)),
